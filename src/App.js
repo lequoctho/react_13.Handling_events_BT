@@ -6,13 +6,7 @@ class App extends Component {
   
   onClickModal() {
     console.log("test");
-    render() {
-      return (
-        <div className="App">
-                
-        </div>
-      );
-    }
+    
   }
   render() {
     return (
