@@ -3,13 +3,17 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  
+  onClickModal() {
+    
+  }
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            <button onclick="">Open modal</button>
+            <button onClick={()=>this.onClickModal()}>Open modal</button>
           </p>
           <a
             className="App-link"
