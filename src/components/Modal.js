@@ -15,6 +15,7 @@ class Modal extends Component {
         
         return <div> 
               <button id="myBtn">Open Modal</button>
+              <input id="myBtn" type="text"/>
               <div id="myModal" class="modal">
                 <div class="modal-content">
                   <span class="close">&times;</span>
