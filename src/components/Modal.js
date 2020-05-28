@@ -3,23 +3,31 @@ import './Modal.css'
 import classNames from 'classnames';
 
 class Modal extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+      super(props);
+      this.state = {visiable: true};
+      this.onClickModal = this.onClickModal.bind(this); 
+  }
 
-        
-    }
+  onClickModal() {
+    this.setState(state => ({
+      visiable: !state.visiable
+    }));
+  }
 
-    
-    render() {
-        
-        
-        return <div> 
-              <button id="myBtn">Open Modal</button>
-              <input id="myBtn" type="text"/>
-              <div id="myModal" class="modal">
-                <div class="modal-content">
+  render() {
+      const { visiable } = this.state;
+      return <div> 
+            <input id="myBtn" type="button" onClick={this.onClickModal} value="Modal"/>
+            
+              <div className={classNames('modal-content', {
+                'vis': visiable
+              })}>
+                <div className="modal-header">
                   <span class="close">&times;</span>
-                  <h3>This is a modal 1</h3>
+                  <h2>This is a modal 1</h2>
+                </div>
+                <div className="modal-content">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -44,9 +52,13 @@ class Modal extends Component {
                     anim id est laborum.
                   </p>
                 </div>
-
+                <div className="modal-footer">
+                  <h3>Modal Footer</h3>
+                </div>
               </div>
-            </div>;
+
+            
+          </div>;
     }
 }
 
